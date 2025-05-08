@@ -5,12 +5,21 @@ pipeline {
     stage('Clone') {
       steps {
         echo 'Cloning happens automatically from SCM (Source Control Management) Config'
+        echo 'Otherwise, a clone is needed.'
+        sh 'git clone https://github.com/brendanmohawk/A-Java-App.git'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        echo 'Building the project...'
       }
     }
 
     stage('Status') {
       steps {
-        echo 'Success'
+        echo 'Checking File Status...'
+        sh 'ls -la'
       }
     }
   }
