@@ -1,1 +1,17 @@
+pipeline {
+  agent any
 
+  stages {
+    stage('Clone') {
+      steps {
+        echo 'Cloning happens automatically from SCM (Source Control Management) Config'
+      }
+    }
+
+    stage('Status') {
+      steps {
+        echo 'Success'
+      }
+    }
+  }
+}
